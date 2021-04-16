@@ -229,7 +229,7 @@ document.querySelector(".b-11").onclick = t11;
 
 function t12() {
   let div1 = document.querySelectorAll(".div-12");
-  let out1 = document.querySelector(".out-12");
+  // let out1 = document.querySelector(".out-12");
   let out = " ";
   for (let i = 0; i < div1.length; i = i + 1) {
     out += div1[i].style.background = "orange";

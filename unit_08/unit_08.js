@@ -26,7 +26,7 @@ function t2() {
   let div = document.querySelector(".out-2");
   let out = " ";
   while (i < 122) {
-    i=i+2;
+    i = i + 2;
     out += i + " ";
     div.innerHTML = out;
   }
@@ -39,7 +39,16 @@ document.querySelector(".b-2").onclick = t2;
 //     25 24 23 22 . . 7
 // от 25 до 7 c шагом 1. Разделитель - пробел. Задача решается с помощью цикла  while.
 
-function t3() {}
+function t3() {
+  let i = 25;
+  let div = document.querySelector(".out-3");
+  let out = " ";
+  while (i >= 7) {
+    out += i + " ";
+    i--;
+    div.innerHTML = out;
+  }
+}
 
 document.querySelector(".b-3").onclick = t3;
 
@@ -48,7 +57,16 @@ document.querySelector(".b-3").onclick = t3;
 //     77_74_71_68_65_62_ ... _38_35_
 // от 77 до 35 c шагом 3. Разделитель - знак подчеркивания. Задача решается с помощью цикла  while.
 
-function t4() {}
+function t4() {
+  let i = 77;
+  let div = document.querySelector(".out-4");
+  let out = " ";
+  while (i >= 35) {
+    out += i + "_";
+    div.innerHTML = out;
+    i = i - 3;
+  }
+}
 
 document.querySelector(".b-4").onclick = t4;
 
@@ -57,7 +75,20 @@ document.querySelector(".b-4").onclick = t4;
 //     1_*2_**3_*4_** ... 17_*
 // от 1 до 17 c шагом 1. Разделитель - знак подчеркивания и звездочка (если число нечетное, и две звездочки если четное). Задача решается с помощью цикла  while.
 
-function t5() {}
+function t5() {
+  let i = 1;
+  let div = document.querySelector(".out-5");
+  let out = " ";
+  while (i <= 17) {
+    if (i % 2) {
+      out += i + "_*";
+    } else {
+      out += i + "_**";
+    }
+    div.innerHTML = out;
+    i++;
+  }
+}
 
 document.querySelector(".b-5").onclick = t5;
 
@@ -69,7 +100,17 @@ document.querySelector(".b-5").onclick = t5;
 // Задача решается с помощью цикла. В каждой итерации цикл выводит 6 звездочек без пробелов и символ переноса строки br.
 // Количество строк (итераций, повторений) цикла  while вводит пользователь в i-6.
 
-function t6() {}
+function t6() {
+  let i = 1;
+  let div = document.querySelector(".out-6");
+  let inp = document.querySelector(".i-6").value;
+  let out = " ";
+  while (i <= inp) {
+    out += "******" + "<br>";
+    i++;
+    div.innerHTML = out;
+  }
+}
 
 document.querySelector(".b-6").onclick = t6;
 
@@ -80,7 +121,17 @@ document.querySelector(".b-6").onclick = t6;
 //     4 3 2 1
 // Задача решается с помощью цикла  while.
 
-function t7() {}
+function t7() {
+  let div = document.querySelector(".out-7");
+  let inp = document.querySelector(".i-7").value;
+  let i = inp;
+  let out = " ";
+  while (i >= 0) {
+    out += i + " ";
+    div.innerHTML = out;
+    i--;
+  }
+}
 
 document.querySelector(".b-7").onclick = t7;
 
@@ -92,7 +143,19 @@ document.querySelector(".b-7").onclick = t7;
 //     4 5 6 7 8
 // Задача решается с помощью цикла  while.
 
-function t8() {}
+function t8() {
+  let div = document.querySelector(".out-8");
+  let inp = document.querySelector(".i-81").value;
+  let inp2 = document.querySelector(".i-82").value;
+  let i = inp;
+  let k = inp2;
+  let out = " ";
+  while (i <= k) {
+    out += i + " ";
+    div.innerHTML = out;
+    i++;
+  }
+}
 
 document.querySelector(".b-8").onclick = t8;
 
@@ -105,7 +168,27 @@ document.querySelector(".b-8").onclick = t8;
 // 6 7 8
 // Задача решается с помощью цикла. Подсказка - вначале делаем проверку, а потом запускаем цикл  while.
 
-function t9() {}
+function t9() {
+  let div = document.querySelector(".out-9");
+  let inp = document.querySelector(".i-91").value;
+  let inp2 = document.querySelector(".i-92").value;
+  let i = inp;
+  let k = inp2;
+  let out = " ";
+  if (i > k) {
+    while (k <= i) {
+      out += k + " ";
+      k++;
+      div.innerHTML = out;
+    }
+  } else if (k > i) {
+    while (i <= k) {
+      out += i + " ";
+      i++;
+      div.innerHTML = out;
+    }
+  }
+}
 
 document.querySelector(".b-9").onclick = t9;
 
@@ -113,7 +196,16 @@ document.querySelector(".b-9").onclick = t9;
 // Кнопка b-10 запускает функцию t10. Функция должна выводить в out-10 четные годы от 1950 до 2000 включительно.
 // Разделитель - пробел. Задача решается через цикл, а четность - через шаг (равный 2).
 
-function t10() {}
+function t10() {
+  let div = document.querySelector(".out-10");
+  let out = " ";
+  let i = 1950;
+  while (i <= 2000) {
+    out += i + " ";
+    div.innerHTML = out;
+    i = i + 2;
+  }
+}
 
 document.querySelector(".b-10").onclick = t10;
 
@@ -125,7 +217,17 @@ document.querySelector(".b-10").onclick = t10;
 //     В результате должно получиться так:
 //     one 3 4 two
 
-function t11() {}
+function t11() {
+  let all = document.querySelectorAll(".div-11");
+  let div = document.querySelector(".out-11");
+  let out = " ";
+  let i = 0;
+  while (i < all.length) {
+    out += all[i].innerHTML + " ";
+    div.innerHTML = out;
+    i++;
+  }
+}
 
 document.querySelector(".b-11").onclick = t11;
 
@@ -135,7 +237,15 @@ document.querySelector(".b-11").onclick = t11;
 // перебрать их с помощью цикла  while. Обращение к div выглядит так elem[i]
 // применить к каждому elem[i].style.background = ‘orange’
 
-function t12() {}
+function t12() {
+  let all = document.querySelectorAll(".div-12");
+  let out = " ";
+  let i = 0;
+  while (i <= all.length) {
+    out += all[i].style.background = "orange";
+    i++;
+  }
+}
 
 document.querySelector(".b-12").onclick = t12;
 
