@@ -7,6 +7,7 @@ function t1() {
   let i = 0;
   let div = document.querySelector(".out-1");
   let out = " ";
+
   while (i < 50) {
     i++;
     out += i + " ";
@@ -25,6 +26,7 @@ function t2() {
   let i = 0;
   let div = document.querySelector(".out-2");
   let out = " ";
+
   while (i < 122) {
     i = i + 2;
     out += i + " ";
@@ -43,6 +45,7 @@ function t3() {
   let i = 25;
   let div = document.querySelector(".out-3");
   let out = " ";
+
   while (i >= 7) {
     out += i + " ";
     i--;
@@ -61,6 +64,7 @@ function t4() {
   let i = 77;
   let div = document.querySelector(".out-4");
   let out = " ";
+
   while (i >= 35) {
     out += i + "_";
     div.innerHTML = out;
@@ -79,6 +83,7 @@ function t5() {
   let i = 1;
   let div = document.querySelector(".out-5");
   let out = " ";
+
   while (i <= 17) {
     if (i % 2) {
       out += i + "_*";
@@ -105,6 +110,7 @@ function t6() {
   let div = document.querySelector(".out-6");
   let inp = document.querySelector(".i-6").value;
   let out = " ";
+
   while (i <= inp) {
     out += "******" + "<br>";
     i++;
@@ -126,6 +132,7 @@ function t7() {
   let inp = document.querySelector(".i-7").value;
   let i = inp;
   let out = " ";
+
   while (i >= 0) {
     out += i + " ";
     div.innerHTML = out;
@@ -150,6 +157,7 @@ function t8() {
   let i = inp;
   let k = inp2;
   let out = " ";
+
   while (i <= k) {
     out += i + " ";
     div.innerHTML = out;
@@ -175,6 +183,7 @@ function t9() {
   let i = inp;
   let k = inp2;
   let out = " ";
+
   if (i > k) {
     while (k <= i) {
       out += k + " ";
@@ -200,6 +209,7 @@ function t10() {
   let div = document.querySelector(".out-10");
   let out = " ";
   let i = 1950;
+
   while (i <= 2000) {
     out += i + " ";
     div.innerHTML = out;
@@ -222,6 +232,7 @@ function t11() {
   let div = document.querySelector(".out-11");
   let out = " ";
   let i = 0;
+
   while (i < all.length) {
     out += all[i].innerHTML + " ";
     div.innerHTML = out;
@@ -241,7 +252,8 @@ function t12() {
   let all = document.querySelectorAll(".div-12");
   let out = " ";
   let i = 0;
-  while (i <= all.length) {
+
+  while (i < all.length) {
     out += all[i].style.background = "orange";
     i++;
   }
@@ -255,7 +267,15 @@ document.querySelector(".b-12").onclick = t12;
 // перебрать их с помощью цикла  while. Обращение к элементу выглядит так elem[i]
 // применить к каждому elem[i].value, причем к value первого должно равняться 1, второго - 2, третьего - 3...
 
-function t13() {}
+function t13() {
+  let inp = document.querySelectorAll(".i-13");
+  let i = 0;
+
+  while (i < inp.length) {
+    inp[i].value = i + 1;
+    i++;
+  }
+}
 
 document.querySelector(".b-13").onclick = t13;
 
@@ -265,7 +285,27 @@ document.querySelector(".b-13").onclick = t13;
 // перебрать их с помощью цикла  while. Обращение к элементу выглядит так elem[i]
 // вывести в out-14 value выбранного. Проверить выбран ли элемент можно с помощью elem[i].checked.
 
-function t14() {}
+function t14() {
+  let inp = document.querySelectorAll(".i-14");
+  let div = document.querySelector(".out-14");
+  let out = " ";
+  let i = 0;
+
+  // while (i >= inp.length) {
+  //   if (i >0) {
+  //     i++;
+  //     out += "311133";
+  //     div.innerHTML = out;
+  //   }
+  // }
+  while (i < inp.length) {
+    if (inp[i].checked) {
+      out += inp[i].value;
+    }
+    i++;
+    div.innerHTML = out;
+  }
+}
 
 document.querySelector(".b-14").onclick = t14;
 
@@ -274,6 +314,16 @@ document.querySelector(".b-14").onclick = t14;
 // 10 0 9 1 8 2 7 3 6 4 5 5 4 6 3 7 2 8 1 9 0 10
 // Для вывода использовать цикл  while. Разделитель пробел.
 
-function t15() {}
+function t15() {
+  let div = document.querySelector(".out-15");
+  let i = 0;
+  let out = " ";
+
+  while (i <= 10) {
+    out += 10 - i + " " + i + " ";
+    div.innerHTML = out;
+    i++;
+  }
+}
 
 document.querySelector(".b-15").onclick = t15;

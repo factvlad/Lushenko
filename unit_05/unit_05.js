@@ -100,6 +100,7 @@ document.querySelector(".b-5").onclick = t5;
 //
 
 function t6() {
+
   let div1 = document.querySelector(".out-6");
   let inp = document.querySelector(".i-6").value;
   let out = " ";
@@ -217,6 +218,7 @@ function t11() {
     out += div1[i].innerHTML + " ";
   }
   out1.innerHTML = out;
+  
 }
 
 document.querySelector(".b-11").onclick = t11;
@@ -229,7 +231,7 @@ document.querySelector(".b-11").onclick = t11;
 
 function t12() {
   let div1 = document.querySelectorAll(".div-12");
-  // let out1 = document.querySelector(".out-12");
+  let out1 = document.querySelector(".out-12");
   let out = " ";
   for (let i = 0; i < div1.length; i = i + 1) {
     out += div1[i].style.background = "orange";
