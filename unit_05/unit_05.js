@@ -100,7 +100,6 @@ document.querySelector(".b-5").onclick = t5;
 //
 
 function t6() {
-
   let div1 = document.querySelector(".out-6");
   let inp = document.querySelector(".i-6").value;
   let out = " ";
@@ -218,7 +217,6 @@ function t11() {
     out += div1[i].innerHTML + " ";
   }
   out1.innerHTML = out;
-  
 }
 
 document.querySelector(".b-11").onclick = t11;
@@ -265,7 +263,7 @@ function t14() {
   let out = " ";
   let inp1 = document.querySelectorAll(".i-14");
   let out1 = document.querySelector(".out-14");
-  
+
   for (let i = 0; i < inp1.length; i++) {
     if (inp1[i].checked) {
       out += inp1[i].value;
@@ -283,13 +281,13 @@ document.querySelector(".b-14").onclick = t14;
 // Подсказка (10 - i) + ' ' + i
 
 function t15() {
-    let out = " ";
-    let out1 = document.querySelector(".out-15");
-    
-    for (let i = 0; i <= 10; i++) {
-    out += (10 - i) + ' ' + i + ' '
-    }
-    out1.innerHTML = out;
+  let out = " ";
+  let out1 = document.querySelector(".out-15");
+
+  for (let i = 0; i <= 10; i++) {
+    out += 10 - i + " " + i + " ";
+  }
+  out1.innerHTML = out;
 }
 
 document.querySelector(".b-15").onclick = t15;

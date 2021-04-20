@@ -32,9 +32,9 @@ document.querySelector(".b-3").onclick = f3;
 //  Task 4
 // По нажатию кнопки b-4 запускайте функцию f4, которая делает toggle класса bg-4 для блока out-4.
 
+let out4 = document.querySelector(".out-4");
 function f4() {
-  let a = document.querySelector(".out-4");
-  a.classList.toggle("bg-4");
+  out4.classList.toggle("bg-4");
 }
 
 document.querySelector(".b-4").onclick = f4;
@@ -42,15 +42,10 @@ document.querySelector(".b-4").onclick = f4;
 //  Task 5
 // По нажатию b-5 запускайте функцию f5, которая проверяет наличие класса bg-4 у блока out-4 (да, именно bg-4 у out-4 ). Результат - true или false, выводите в out-5.
 
+let div5 = document.querySelector(".out-5");
+
 function f5() {
-  let a = document.querySelector(".out-4").getAttribute("class");
-  let div = document.querySelector(".out-5");
-  if (a == "out-4 bg-4") {
-    div.innerHTML = true;
-  } else {
-    div.innerHTML = false;
-  }
-  // console.log(a);
+  div5.innerHTML = out4.classList.contains("bg-4");
 }
 
 document.querySelector(".b-5").onclick = f5;
@@ -277,3 +272,14 @@ function f20() {
 }
 
 document.querySelector(".b-20").onclick = f20;
+
+// let newspaper = {
+//   sports: `ARod Hits Home Run`,
+//   sportsWriters: [`Miramon Nuevo`, `Rick Reilly`, `Woddy Paige`],
+//   business: `GE Stock Dips Again`,
+//   businessWriters: [`Adam Smith`, `Albert Humphrey`, `Charles Handy`],
+//   movies: `Superman Is A Flop`,
+//   moviesWriters: [`Rogert Ebert`, `Andrew Sarris`, `Wesley Morris`],
+// };
+// console.log(newspaper.businessWriters);
+// console.log(newspaper.businessWriters[0], newspaper[`businessWriters`][1],newspaper[`businessWriters`][2]);
