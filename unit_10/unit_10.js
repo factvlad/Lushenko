@@ -349,12 +349,14 @@ document.querySelector(".b-16").onclick = f16;
 let ar17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
 
 function f17() {
-  out = [];
+  // out = [];
+  out = "";
   let div = document.querySelector(".out-17");
 
   for (let i = 0; i < ar17.length; i++) {
     if (ar17[i] > 3) {
-      out[out.length] = ar17[i];
+      out++;
+      // out[out.length] = ar17[i];
       div.innerHTML = out.length;
     }
   }
@@ -394,13 +396,12 @@ let ar19 = [15, 424, 313, 78, 241, 4, 45, 67];
 function f19() {
   let div = document.querySelector(".out-19");
   let min = ar19[0];
-  let out = "";
 
   for (let i = 0; i < ar19.length; i++) {
     if (ar19[i] < min) {
-      out = i;
+      min = ar19[i]
     }
-    div.innerHTML = out;
+    div.innerHTML = min;
   }
 }
 

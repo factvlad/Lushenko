@@ -286,8 +286,9 @@ function t15() {
 
   for (let i = 0; i <= 10; i++) {
     out += 10 - i + " " + i + " ";
-  }
+  } 
   out1.innerHTML = out;
 }
 
 document.querySelector(".b-15").onclick = t15;
+
