@@ -249,13 +249,13 @@ let d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
 function f15() {
   let inp = +document.querySelector(".i-15").value;
 
-  for (let i = 0; i < d15.length; i++) {
-    if (d15[i] !== inp) {
+  if (d15.indexOf(inp) === -1) {
+    for (let i = 0; i < d15.length; i++) {
       d15.push(inp);
       break;
     }
-    console.log(d15.length);
   }
+
   showArr(".out-15", d15);
 }
 
@@ -340,14 +340,15 @@ let maxString = "";
 
 function f19() {
   let div = document.querySelector(".out-19");
-  let out = [];
+  let out = 0;
 
   for (let i = 0; i < d19.length; i++) {
     if (d19[i].length > out.length) {
-      out = d19[i].length;
+      s = d19[i].length;
+      maxString = d19[i];
     }
   }
-  div.innerHTML = out;
+  div.innerHTML = maxString;
 }
 
 document.querySelector(".b-19").onclick = f19;
