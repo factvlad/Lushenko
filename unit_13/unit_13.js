@@ -259,16 +259,16 @@ let a13 = {
 };
 
 function f13() {
-  let div = document.querySelector(".out-13");
-  let out = "";
-  for (let key in a13) {
-    out = a13.one + a13.ivan;
-  }
-
-  // let out = 0;
-  // for (const key in a13) {
-  //   typeof a13[key] === "number" ? (out += a13[key]) : "";
+  // let div = document.querySelector(".out-13");
+  // let out = "";
+  // for (let key in a13) {
+  //   out = a13.one + a13.ivan;
   // }
+
+  let out = 0;
+  for (let key in a13) {
+    typeof a13[key] === "number" ? (out += a13[key]) : "";
+  }
   div.innerHTML = out;
 }
 
@@ -317,6 +317,7 @@ function f15() {
       out += `${a15[key][i]} `;
     }
   }
+  console.log(out);
   div.innerHTML = out;
 }
 
@@ -341,18 +342,24 @@ let a16 = {
 };
 
 function f16() {
-  let div = document.querySelector(".out-16");
-  let out = "";
+  // let div = document.querySelector(".out-16");
+  // let out = "";
 
+  // for (let key in a16) {
+  //   for (let key2 in a16[key]) {
+  //     // key2 === "name" ? (out += `${a16[key]["name"]} `) : "";
+  //     if (key2 === "name") {
+  //       out += `${a16[key]["name"]} `;
+  //     }
+  //   }
+  // }
+  // div.innerHTML = out;
+  let out = "";
   for (let key in a16) {
-    for (key2 in a16[key]) {
-      // key2 === "name" ? (out += `${a16[key]["name"]} `) : "";
-      if (key2 === "name") {
-        out += `${a16[key]["name"]} `;
-      }
-    }
+    out += a16[key]["name"] + " ";
   }
-  div.innerHTML = out;
+
+  document.querySelector(".out-16").innerHTML = out;
 }
 
 document.querySelector(".b-16").onclick = f16;
@@ -376,16 +383,21 @@ let a17 = {
 };
 
 function f17() {
-  let div = document.querySelector(".out-17");
   let out = "";
-
   for (let key in a17) {
-    for (key2 in a17[key]) {
-      if (key2 === "age" && a17[key]["age"] > 30) {
-        out += `${a17[key]["name"]} `;
-      }
-    }
+    if (a17[key]["age"] > 30) out += a17[key]["name"] + " ";
   }
+
+  let div = document.querySelector(".out-17");
+  
+
+  // for (let key in a17) {
+  //   for (key2 in a17[key]) {
+  //     if (key2 === "age" && a17[key]["age"] > 30) {
+  //       out += `${a17[key]["name"]} `;
+  //     }
+  //   }
+  // }
   div.innerHTML = out;
 }
 
@@ -416,19 +428,28 @@ function f18() {
   // }
   // div.innerHTML = out;
 
-  let bran = document.querySelector(".i-18").value;
+  // let bran = document.querySelector(".i-18").value;
   let div = document.querySelector(".out-18");
-  let out = "";
+  // let out = "";
 
+  // for (let key in a18) {
+  //   if (key === bran) {
+  //     for (let i = 0; i < a18[key].length; i++) {
+  //       out += `${a18[key][i]} `;
+  //     }
+  //   } else {
+  //     out += "";
+  //   }
+  // }
+  let input = document.querySelector('.i-18').value;
+  let out = '';
   for (let key in a18) {
-    if (key === bran) {
-      for (let i = 0; i < a18[key].length; i++) {
-        out += `${a18[key][i]} `;
-      }
-    } else {
-      out += "";
-    }
-  }
+      if (input === key) {
+          for (i = 0; i < a18[key].length; i++)
+              out += a18[key][i] + " "
+      } else {
+          out += ''
+      }}
   div.innerHTML = out;
 }
 document.querySelector(".b-18").onclick = f18;
@@ -488,7 +509,7 @@ function f20() {
   let div = document.querySelector(".out-20");
   let out = "";
 
-  for (key in a20) {
+  for (let key in a20) {
     for (let i = 0; i < a20[key].length; i++) {
       // a20[key][i][1] === 2 ? (out += `${a20[key][i][0]} `) : (out += "");
       if (a20[key][i][1] === 2) {
