@@ -171,16 +171,29 @@ let a9 = {
   d: 54,
 };
 
+// function f9() {
+//   let div = document.querySelector(".out-9");
+//   let inp1 = +document.querySelector(".i-9").value;
+//   let out = "";
+
+//   for (let key in a9) {
+//     out += a9[key] === inp1 ? `${key} ` : "";
+//   }
+
+//   div.innerHTML = out;
+// }
 function f9() {
-  let div = document.querySelector(".out-9");
-  let inp1 = +document.querySelector(".i-9").value;
-  let out = "";
+  let input = document.querySelector(".i-9").value;
+  let div = "";
 
-  for (let key in a9) {
-    out += a9[key] === inp1 ? `${key} <br> ` : "";
-  }
-
-  div.innerHTML = out;
+  for (let key in a9)
+    if (a9[key] == input) {
+      div += [key] + " ";
+      console.log([key]);
+    } else {
+      div += "";
+    }
+  document.querySelector(".out-9").innerHTML = div;
 }
 
 document.querySelector(".b-9").onclick = f9;
@@ -239,9 +252,13 @@ let a12 = {
 };
 
 function f12() {
-  let inp1 = +document.querySelector(".i-12").value;
+  let inp1 = document.querySelector(".i-12").value;
+  
   for (let key in a12) {
-    a12[key] === inp1 ? delete a12[key] : a12;
+    // a12[key] === inp1 ? delete a12[key] : a12;
+    if (a12[key] == inp1) {
+      return delete a12[key];
+    }
   }
   f5(a12, ".out-12");
 }
@@ -389,7 +406,6 @@ function f17() {
   }
 
   let div = document.querySelector(".out-17");
-  
 
   // for (let key in a17) {
   //   for (key2 in a17[key]) {
@@ -441,15 +457,15 @@ function f18() {
   //     out += "";
   //   }
   // }
-  let input = document.querySelector('.i-18').value;
-  let out = '';
+  let input = document.querySelector(".i-18").value;
+  let out = "";
   for (let key in a18) {
-      if (input === key) {
-          for (i = 0; i < a18[key].length; i++)
-              out += a18[key][i] + " "
-      } else {
-          out += ''
-      }}
+    if (input === key) {
+      for (i = 0; i < a18[key].length; i++) out += a18[key][i] + " ";
+    } else {
+      out += "";
+    }
+  }
   div.innerHTML = out;
 }
 document.querySelector(".b-18").onclick = f18;

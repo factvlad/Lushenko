@@ -1,0 +1,132 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+body {
+  margin: 1px;
+  font-family: "Acrom", sans-serif;
+  color: #000000;
+  margin-top: 100px;
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.weather {
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,202,45,0.5354516806722689) 100%);
+  flex-direction: column;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  overflow-x: hidden;
+  outline: 3px solid rgb(63, 235, 11);
+  width: 490px;
+    height: 550px;
+}
+.weather__container-search {
+
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 320px;
+  padding: 30px;
+  margin-bottom: 20px;
+  outline: 3px solid black
+}
+
+.weather__des-label {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.weather__select {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
+  background: transparent;
+  outline: none;
+}
+
+
+.weather__btn-show {
+  padding: 10px;
+  font-size: 25px;
+  text-align: center;
+  background-color: #4caf50;
+  color: #ffffff;
+
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+.weather__btn-show:focus,
+.weather__btn-show:hover {
+  background: rgb(29,253,190);
+background: radial-gradient(circle, rgba(29,253,190,1) 32%, rgba(252,176,69,1) 47%, rgba(131,58,180,1) 75%);
+}
+
+.weather__container-day {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  max-width: 500px;
+  padding: 20px;
+  outline: 2px solid black
+}
+
+.weather__city {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.weather__wrapper-temp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather__icon {
+  margin-right: 10px;
+}
+
+.weather__temp {
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 40px;
+}
+
+.weather__desc {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: 150;
+  letter-spacing: 0.05em;
+  color: #464646;
+  padding-bottom: 5px;
+}
