@@ -36,6 +36,7 @@ function t2() {
 
 document.querySelector(".b-2").onclick = t2;
 
+
 //  Task 3
 // Кнопка b-3 запускает функцию t3. Функция должна выводить в out-3 строку вида:
 //     25 24 23 22 . . 7
