@@ -3,25 +3,43 @@
 
 let a1 = [5, 7, 9, 11, 13, 15];
 
-function f1() {}
+function f1() {
+    let arr = '';
+    let out = document.querySelector('.out-1')
+    for (let i = 0; i < a1.length; i++) {
+        arr += a1[i] + ' ';
+    }
+    out.innerHTML = arr;
+}
 
-document.querySelector(".b-1").addEventListener("click", f1);
+document.querySelector('.b-1').addEventListener('click', f1);
 
 // Task 2
 //При нажатии .b-2 выполняете функцию f2. Функция перебирает массив a2  c помощью цикла for (let i. Выведите на страницу в .out-2 формате индекс+пробел+значение+пробел.
 
 let a2 = [5, 7, 9, 11, 13, 15];
 
-function f2() {}
-
-document.querySelector(".b-2").addEventListener("click", f2);
+function f2() {
+    let arr = '';
+    let out = document.querySelector('.out-2')
+    for (let i = 0; i < a2.length; i++) {
+        arr += [i] + ' ' + a2[i] + ' ';
+    }
+    out.innerHTML = arr;
+}
+document.querySelector('.b-2').addEventListener('click', f2);
 
 // Task 3
 //При нажатии .b-3 выполняете функцию f3. Функция получает div.out-3 со страницы с помощью getElementsByClassName и в каждый записывает число 3, перезаписывая содержимое div.
 
-function f3() {}
+function f3() {
+    let divS = document.getElementsByClassName('out-3')
+    for (let i = 0; i < divS.length; i++) {
+        divS[i].innerHTML = "3"
+    }
+}
 
-document.querySelector(".b-3").addEventListener("click", f3);
+document.querySelector('.b-3').addEventListener('click', f3);
 
 // Task 4
 //При нажатии .b-4 выполняете функцию f4. Функция получает div.out-4 со страницы с помощью querySelectorAll и в каждый дописывает число 4.
