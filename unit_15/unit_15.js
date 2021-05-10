@@ -310,6 +310,7 @@ document.querySelector(".b-13").onclick = () => {
   console.log(f13());
 };
 
+
 // https://codepen.io/vvv7220/pen/qBOgxyZ?editors=1111
 
 // let stroka = "1234545"; // основная строка
