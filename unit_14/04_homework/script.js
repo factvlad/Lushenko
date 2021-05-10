@@ -72,3 +72,5 @@ createListOption();
 
 document.querySelector("#city_list").onchange = getWeather;
 getWeather();
+
+
