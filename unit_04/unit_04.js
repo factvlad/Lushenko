@@ -16,6 +16,7 @@ function f2() {
 
 document.querySelector(".b-2").onclick = f2;
 
+
 // Task 3
 // Создайте p.p-3 - при нажатии на него выводите alert с номером задачи.
 
