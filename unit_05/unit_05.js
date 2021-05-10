@@ -253,6 +253,7 @@ function t13() {
 
 document.querySelector(".b-13").onclick = t13;
 
+
 //  Task 14
 // Кнопка b-14 запускает функцию t14  Функция должна:
 //     получить все input.i-14
