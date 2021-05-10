@@ -112,6 +112,7 @@ function t5() {
 
 document.querySelector(".b-5").onclick = t5;
 
+
 //  Task 6
 // <p>С помощью вложенных циклов, нарисуйте строку:</p>
 // <pre>
