@@ -159,7 +159,7 @@ function t8() {
 
 
 
-  
+
   a8_res = a8
     .map((item, index) => {
       if (item % 2 == 0) {
@@ -321,7 +321,8 @@ function t15() {
     }
   });
   return a15_res;
-}
+} 
+ 
 
 document.querySelector(".b-15").onclick = () => {
   console.log(t15());
