@@ -143,24 +143,30 @@ document.querySelector(".b-7").onclick = () => {
 let a8 = [3, 14, 15, 92, 7, 32, 59];
 
 function t8() {
-  for (let i = 0; i < a8.length; i++) {
-    if (a8[i] % 2 === 0) {
-      a8_res.push(i);
-    }
-  }
+  // for (let i = 0; i < a8.length; i++) {
+  //   if (a8[i] % 2 === 0) {
+  //     a8_res.push(i);
+  //   }
+  // }
+
+  // return a8_res;
+
+  // let a8_res = [];
+  // a8.map(function (elem, index) {
+  //   if (elem % 2 == 0) a8_res.push(index);
+  // });
+  // return a8_res;
+
+
+  a8_res = a8
+    .map((item, index) => {
+      if (item % 2 == 0) {
+        return index;
+      }
+    })
+    .filter((item) => item);
 
   return a8_res;
-
-  //   a8_res
-  //     .map(function (item, index) {
-  //       if (item % 2 == 0) {
-  //         return index;
-  //       }
-  //     })
-  //     .filter(function (item) {
-  //       return item;
-  //     });
-  //   return a8_res;
 }
 
 document.querySelector(".b-8").onclick = () => {
@@ -270,7 +276,6 @@ function t14() {
 document.querySelector(".b-14").onclick = () => {
   console.log(t14());
 };
-
 
 // Task 15 ============================================
 /*  Дан массив a15. С помощью метода filter функция t15 должна создать на его основе массив a15_res содержащий записи только тех пользователей, номер паспорта (pnum) которых не пустая строка и длина номера - 6 символов. Функция должна возвращать a15_res.*/
