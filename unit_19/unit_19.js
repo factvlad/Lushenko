@@ -5,7 +5,6 @@ function t1() {
   let out = document.querySelector(".out-1");
   //   out.textContent = document.querySelector(".div-1").textContent;
   out.textContent = this.textContent;
-  return out.textContent;
 }
 
 document.querySelector(".div-1").onclick = t1;
@@ -15,7 +14,6 @@ document.querySelector(".div-1").onclick = t1;
 
 function t2(e) {
   document.querySelector(".out-2").innerHTML = e.altKey;
-  return e.altKey;
 }
 
 document.querySelector(".div-2").onclick = t2;
@@ -29,7 +27,7 @@ let w3 = 75;
 document.querySelector(".div-3").onclick = () => {
   w3 += 5;
   document.querySelector(".div-3").style.width = `${w3}px`;
-  return w3;
+  w3;
 };
 
 // ваше событие здесь!!!
@@ -39,9 +37,7 @@ document.querySelector(".div-3").onclick = () => {
 
 function t4() {
   let out = document.querySelector(".out-4");
-  //   out.textContent = document.querySelector(".div-4").textContent;
   out.textContent = this.textContent;
-  return out.textContent;
 }
 
 document.querySelector(".div-4").ondblclick = t4;
@@ -88,12 +84,15 @@ function t8() {
   //     return !this.checked;
   //   };
   // }
+  if (this.checked) {
+    document.oncontextmenu = () => {
+      return false;
+    };
+  } else document.oncontextmenu = () => true;
 
-  let ch_8 = document.querySelector(".ch-8");
-
-  if (ch_8.checked) {
-    ch_8.oncontextmenu = false;
-  }
+  // if (this.checked) {
+  //   document.oncontextmenu = () => false;
+  // } else document.oncontextmenu = () => null;
 }
 
 document.querySelector(".ch-8").onchange = t8;
@@ -184,24 +183,29 @@ function t16() {
   let w1 = div16.offsetWidth;
   w1++;
   div16.style.width = `${w1}px`;
-
-  // let w16 = div16.offsetWidth;
-  // w16 += 1;
-  // div16.style.width = `${w16}px`;
 }
 
 div16.onmousemove = () => t16();
+// document.querySelector(".div-16").addEventListener("mousemove", t16);
 
 // Task 17 ============================================
 /*  Дано две кнопки - b-17_on и b-17_off. Напишите фукнции t17On и t17Off которые включают и отключают событие move в задании 16. */
 
+// function t17On() {
+//   document.querySelector(".div-16").onmousemove = t16;
+// }
+// function t17Off() {
+//   document.querySelector(".div-16").onmousemove = null;
+// }
+
+// document.querySelector(".b-17_on").onclick = t17On;
+// document.querySelector(".b-17_off").onclick = t17Off;
 function t17On() {
-  document.querySelector(".div-16").onmousemove = t16;
+  document.querySelector(".div-16").addEventListener("mousemove", t16);
 }
 function t17Off() {
-  document.querySelector(".div-16").onmousemove = null;
+  document.querySelector(".div-16").removeEventListener("mousemove", t16);
 }
-
 document.querySelector(".b-17_on").onclick = t17On;
 document.querySelector(".b-17_off").onclick = t17Off;
 
