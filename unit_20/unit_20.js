@@ -3,8 +3,6 @@
 
 function t1(event) {
   document.querySelector(".out-1").textContent = event.key;
-  console.log(event.key);
-  return event.key;
 }
 
 document.querySelector(".i-1").onkeydown = t1;
@@ -14,8 +12,6 @@ document.querySelector(".i-1").onkeydown = t1;
 
 function t2(event) {
   document.querySelector(".out-2").textContent = event.keyCode;
-  console.log(event.key);
-  return event.keyCode;
 }
 
 document.querySelector(".i-2").onkeypress = t2;
@@ -49,7 +45,7 @@ function t4(event) {
   //   out.innerHTML += inp.toLowerCase();
   let k = event.keyCode;
   if (k >= 97 && k <= 122) {
-    return (document.querySelector(".out-4").textContent += event.key);
+    document.querySelector(".out-4").textContent += event.key;
   }
   console.log(event.keyCode);
 }
@@ -168,8 +164,67 @@ document.querySelector(".i-10").onkeydown = t10;
 5. Самостоятельно добавьте клавишу alt, enter.
 */
 
+const allButtons = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "0",
+  "w",
+  "e",
+  "r",
+  "enter",
+  "space",
+  "ctrl",
+  "alt",
+  "a",
+  "s",
+  "d",
+  "f",
+  "g",
+  "h",
+  "j",
+  "k",
+  "l",
+  "Backspace",
+];
+
+for (let item of allButtons) {
+  let b = document.createElement("div");
+  b.classList.add("keyboard");
+  b.setAttribute("data", item);
+  b.innerHTML = item;
+  document.querySelector(".out-11").append(b);
+}
+
+const keybords11 = document.querySelectorAll(".keyboard");
+
 function t11(event) {
-  console.log(event.key);
+  for (let item of keybords11) {
+    item.classList.remove("active");
+  }
+  console.log(keybords11);
+
+  let key = event.key;
+  console.log(key);
+
+  if (key === " ") {
+    key = "space";
+  }
+  if (key === "Control") {
+    key = "ctrl";
+  }
+  if (key === "Enter") {
+    key = "enter";
+  }
+
+  let button = document.querySelector(`.keyboard[data="${key}"]`);
+  button.classList.add("active");
 }
 
 document.querySelector(".i-11").onkeydown = t11;
