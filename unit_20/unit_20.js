@@ -203,12 +203,15 @@ for (let item of allButtons) {
 }
 
 const keybords11 = document.querySelectorAll(".keyboard");
+const keybords12 = document.getElementsByClassName("keyboard");
+console.log(keybords11);
+console.log(keybords12);
 
 function t11(event) {
-  for (let item of keybords11) {
+  for (let item of keybords12) {
     item.classList.remove("active");
   }
-  console.log(keybords11);
+  console.log(keybords12);
 
   let key = event.key;
   console.log(key);
