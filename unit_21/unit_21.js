@@ -141,7 +141,7 @@ document.querySelector(".div-10").addEventListener("touchstart", t10);
 // Task 11 ============================================
 /*  Дан блок div-11. Добавьте на него событие touch. При срабатывании выводите радиус события radiusX, radiusY. */
 
-let div11 = document.querySelector('.out-11');
+let div11 = document.querySelector(".out-11");
 
 function t11(event) {
   div11.innerHTML = `radiusX: ${event.touches[0].radiusX}<br>`;
@@ -149,7 +149,7 @@ function t11(event) {
   console.log(event.touches[0].radiusX);
   console.log(event.touches[0].radiusY);
 }
-document.querySelector('.div-11').addEventListener('touchmove', t11);
+document.querySelector(".div-11").addEventListener("touchmove", t11);
 
 // ваше событие здесь!!!
 
@@ -163,17 +163,58 @@ document.querySelector('.div-11').addEventListener('touchmove', t11);
 <p>5. Добавьте во все действия следующее - в изображении img-12-max заменяется src на активную. Т.е. произошло событие - заменилась главная картинка.</p>
 */
 
-const images = document.querySelectorAll(".img-12-min");
+let reset = document.createElement("button");
+reset.classList.add("button-primary", "reset");
+reset.innerHTML = "Reset";
+document.querySelector(".next").after(reset);
+// Создаем кнопку reset 
+
+
+const images = document.querySelectorAll(".img-12-min"); // Получаем NodeList из картинок
+// const next = document.querySelectorAll(".next"); 
+// const prev = document.querySelectorAll(".prev");
+
+
+
 let count = 0; // переменная, которая указывает на номер активного изображения в images
 
-const next = document.querySelectorAll(".next");
-next.onclick = nextFunction;
+function nextFunction() {
+  if (count + 1 < images.length) {
+    count++;
+  } else {
+    count = 0;
+  }
 
-const prev = document.querySelectorAll(".prev");
-prev.onclick = prevFunction;
+  for (item of images) {
+    item.classList.remove("active-img");
+  }
+  images[count].classList.add("active-img");
+  document.querySelector(".img-12-max").src = images[count].src;
+}
 
-function nextFunction() {}
+function prevFunction() {
+  if (count - 1 >= 0) {
+    count--;
+  } else {
+    count = images.length - 1;
+  }
 
-function prevFunction() {}
+  for (let item of images) {
+    item.classList.remove("active-img");
+  }
+  images[count].classList.add("active-img");
+  document.querySelector(".img-12-max").src = images[count].src;
+}
 
-// ваше событие здесь!!!
+function resetFunction() {
+  for (let item of images) {
+    item.classList.remove("active-img");
+  }
+  count = 0;
+  images[count].classList.add("active-img");
+  document.querySelector(".img-12-max").src = images[count].src;
+}
+
+document.querySelector(".next").onclick = nextFunction;
+document.querySelector(".prev").onclick = prevFunction;
+document.querySelector(".reset").onclick = resetFunction;
