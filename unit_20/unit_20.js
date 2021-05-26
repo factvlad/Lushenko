@@ -164,6 +164,7 @@ document.querySelector(".i-10").onkeydown = t10;
 5. Самостоятельно добавьте клавишу alt, enter.
 */
 
+
 const allButtons = [
   "1",
   "2",
