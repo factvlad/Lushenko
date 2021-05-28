@@ -72,18 +72,16 @@ document.querySelector(".b-4").onclick = t4;
 // Добавьте try, catch, finnaly так, чтобы в out-5 выводился 0 при ошибки. А в out-5-1 всегда выводилось слово 'finnaly';
 
 function t5() {
-    let p = document.querySelectorAll('p');
-    
-    try {
-      p.push(3);
-    }
-    catch (error) {
-      console.log(error);
-      document.querySelector('.out-5').textContent = 0;
-    }
-    finally {
-      document.querySelector('.out-5-1').textContent = 'finnaly';
-    }
+  let p = document.querySelectorAll("p");
+
+  try {
+    p.push(3);
+  } catch (error) {
+    console.log(error);
+    document.querySelector(".out-5").textContent = 0;
+  } finally {
+    document.querySelector(".out-5-1").textContent = "finnaly";
   }
-  
-  document.querySelector('.b-5').onclick = t5;
+}
+
+document.querySelector(".b-5").onclick = t5;
