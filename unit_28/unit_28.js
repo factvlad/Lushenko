@@ -5,10 +5,12 @@ let goods2 = new Goods("Lawash", 5, "shopping_cart", "300$");
 let goods3 = new Goods2("Chiabata", 10, "shopping_cart", "450$", true);
 let abc = new Valid("fact1@ukr.net", "12345");
 let abc2 = new Valid("fact2@ukr.net", "1234567");
-let valid2 = new Valid2("", "1234567");
+let valid2 = new Valid2("", "1234");
 let valid3 = new Valid2("fact", "1234567");
 
 console.log(goods);
+console.log(goods2);
+console.log(goods3);
 
 goods2.draw(".out-4");
 goods3.draw(".out-6");
@@ -22,6 +24,7 @@ valid2.validate();
 valid3.validate();
 console.log(valid2);
 console.log(valid3);
+
 
 // Task 1
 // Создайте класс Goods. Класс должен содержать свойства name, amount. Создайте на его основе объект goods. Выведите в консоль созданный объект. Помните, все классы - в отдельных файлах. Имена классов с большой буквы.
@@ -58,3 +61,4 @@ console.log(valid3);
 
 //Task 12.
 // Создайте на основе класса Valid2 объект valid3 и задайте не пустой емейл и длину пароля больше 7. Запустите метод validate(). Выведите объект в консоль.
+

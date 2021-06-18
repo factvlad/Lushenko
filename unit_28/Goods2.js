@@ -6,6 +6,6 @@ class Goods2 extends Goods {
 
   draw(element) {
     super.draw(element);
-    document.querySelector(element).innerHTML += ` ${this.sale}`;
+    // document.querySelector(element).innerHTML += ` ${this.sale}`;
   }
 }
