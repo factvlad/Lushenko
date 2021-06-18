@@ -14,6 +14,7 @@ const cities = {
   4876353: "Сидней",
 };
 
+
 function getWeather() {
   let cityId = document.querySelector("#city_list").value;
 
