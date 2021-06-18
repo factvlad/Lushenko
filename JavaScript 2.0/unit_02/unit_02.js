@@ -11,7 +11,7 @@ console.log(a * b);
 
 let c = 7
 let d = 9
-document.querySelector('.out-2').textContent = c / d ; 
+document.querySelector('.out-2').textContent = c / d ;  
 
 
 // Task 3.
