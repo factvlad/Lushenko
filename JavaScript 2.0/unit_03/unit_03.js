@@ -11,7 +11,7 @@ function f1() {
     }
 }
 
-document.querySelector(".b-1").onclick = f1;
+document.querySelector(".b-1").onclick = f1; 
 
 
 // Task 2
