@@ -14,7 +14,7 @@ function t1() {
   div1.innerHTML = out;
 }
 
-document.querySelector(".b-1").onclick = t1;
+document.querySelector(".b-1").onclick = t1; 
 
 //  Task 2
 // Кнопка b-2 запускает функцию t2. Функция должна выводить в out-2 строку вида:
