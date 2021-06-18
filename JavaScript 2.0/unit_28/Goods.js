@@ -1,4 +1,4 @@
-class Goods {
+class Goods { 
     constructor(name, amount, image, count) {
       this.name = name;
       this.amount = amount;
