@@ -7,7 +7,7 @@ function t1(event) {
 
 document.querySelector(".i-1").onkeydown = t1;
 
-// Task 2 ============================================
+// Task 2 ============================================ 
 /*  Дан input .i-2. Напишите функцию t2, которая по событию onkeypress выводит в out-2 числовой код символа (event.keyCode). */
 
 function t2(event) {
