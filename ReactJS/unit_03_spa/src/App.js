@@ -1,5 +1,5 @@
 import "./App.css";
-import Header from "./Header";
+// import Header from "./Header";
 import Home from "./Home";
 import About from "./About";
 import Category from "./Category";
@@ -11,25 +11,25 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 
-const headerNav = {
-  site_name: "react test",
-  site_title: "my first site with react",
-  nav: [
-    { link: "nav1", text: "my link" },
-    { link: "nav2", text: "my link 2" },
-    { link: "nav3", text: "my link 3" },
-  ],
-};
+// const headerNav = {
+//   site_name: "react test",
+//   site_title: "my first site with react",
+//   nav: [
+//     { link: "nav1", text: "my link" },
+//     { link: "nav2", text: "my link 2" },
+//     { link: "nav3", text: "my link 3" },
+//   ],
+// };
 
-const catNav = {
-  site_name: "react test",
-  site_title: "my first site with react",
-  nav: [
-    { link: "nav1", text: "my link" },
-    { link: "nav2", text: "my link 2" },
-    { link: "nav3", text: "my link 3" },
-  ],
-};
+// const catNav = {
+//   site_name: "react test",
+//   site_title: "my first site with react",
+//   nav: [
+//     { link: "nav1", text: "my link" },
+//     { link: "nav2", text: "my link 2" },
+//     { link: "nav3", text: "my link 3" },
+//   ],
+// };
 
 
 
