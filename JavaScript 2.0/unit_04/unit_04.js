@@ -14,7 +14,7 @@ function f2() {
     alert("Task 2");
 }
 
-document.querySelector(".b-2").onclick = f2;
+document.querySelector(".b-2").onclick = f2; 
 
 
 
