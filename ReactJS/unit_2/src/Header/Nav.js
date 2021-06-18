@@ -1,5 +1,5 @@
 function Nav(props) {
-  let data = props.nav;
+  let data = props.nav
   const itemList = data.map((item) => (
     <li key={item.text}>
       <a href={item.link}>{item.text}</a>

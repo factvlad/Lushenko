@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import "./App.css";
 // import Header from "./Header";
 import Home from "./Home";
@@ -8,6 +9,7 @@ import CategoryDescription from "./CategoryDescription";
 import Error404 from "./Error404";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 
 
 
@@ -52,7 +54,7 @@ function App() {
           </ul>
         </nav>
         <Switch>
-          <Route exact path="/" component={Home} />
+         <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route exact path="/category" component={Category} />
           <Route path="/category/:catName" component={CategoryDescription} />
