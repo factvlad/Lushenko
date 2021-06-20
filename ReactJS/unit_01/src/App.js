@@ -1,11 +1,12 @@
 // import logo from "./logo.svg";
+
 import "./App.css";
 let text = "test variable";
 const style = {
   fontSize: "24px",
   fontStyle: "italic",
   color: "red",
-};
+}; 
 
 function App() {
   let text2 = "222";
