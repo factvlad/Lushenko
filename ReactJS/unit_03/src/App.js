@@ -6,7 +6,6 @@ import Category from "./Category";
 import Footer from "./Footer";
 import CategoryDescription from "./CategoryDescription";
 import Error404 from "./Error404";
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
