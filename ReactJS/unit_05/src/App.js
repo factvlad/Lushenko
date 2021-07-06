@@ -92,6 +92,7 @@ function App() {
     let newNum = myRef10.current.value;
     let newParse = [...st10, newNum];
     setSt10(newParse);
+    console.log(newParse)
   }
 
   return (
