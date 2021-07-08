@@ -80,7 +80,7 @@ function App() {
   }
 
   //task9
-  let [st9, setSt9] = useState();
+  const [st9, setSt9] = useState();
   function task9(event) {
     setSt9(event.target.value);
   }
