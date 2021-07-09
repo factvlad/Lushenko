@@ -24,7 +24,7 @@ function App() {
 
   // let showCart;
   // if (count !== 0) {
-  //   showCart = <CartComponent cart={cart} goods={goodsArr} />;
+  //   showCart = <Cart cart={cart} goods={goodsArr} />;
   // } else {
   //   showCart = "Empty";
   // }
@@ -44,7 +44,7 @@ function App() {
             />
           ))}
         </div>
-        <CartComponent data={cart} />
+        <CartComponent data={cart}/>
       </div>
     </>
   );

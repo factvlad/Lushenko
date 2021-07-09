@@ -6,7 +6,7 @@ function App() {
   //task 2
   const h1 = cE("h1", {}, "unit_08");
   //task 3
-  const h2 = cE("р2", { className: "text-orange" }, "header 2");
+  const h2 = cE("р", { className: "text-orange" }, "header 2");
   //task 4
   const p = cE("p", { style: { color: "red" } }, "this is p");
   //task 5
@@ -21,21 +21,24 @@ function App() {
   let [s1, setS1] = useState([]);
   let newRef = React.createRef();
 
-  const t7Input = React.createElement("input", {
-    ref: { newRef }, value : "123"
+  const ul = cE("ul", {}, s1);
+  const t7Input = cE("input", {
+    ref: newRef,
   });
-console.log(newRef);
-
-
-
-  // function myFunction() {
-  //   let inpValue = newRef.current.value;
-  //   let arr = [...s1];
-  //   if (inpValue > "") {
-  //     arr.push(inpValue);
-  //   }
-  //   setS1(arr.map((item, index) => <li key={index.toString()}>{item}</li>));
-  // }
+  const t7Button = React.createElement(
+    "button",
+    {
+      onClick: () => {
+        let inpValue = newRef.current.value;
+        let arr = [...s1];
+        if (inpValue > "") {
+          arr.push(inpValue);
+        }
+        setS1(arr.map((item, index) => <li key={index.toString()}>{item}</li>));
+      },
+    },
+    "Push"
+  );
 
   return (
     <>
@@ -45,9 +48,8 @@ console.log(newRef);
       {input}
       {div}
       {t7Input}
-
-      <button /* onClick={myFunction} */>GO</button>
-      <ul>{s1}</ul>
+      {t7Button}
+      {ul}
     </>
   );
 }
