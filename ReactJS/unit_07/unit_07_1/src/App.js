@@ -16,18 +16,10 @@ function App() {
       ? cartTemp[event.target.dataset.key]++
       : (cartTemp[event.target.dataset.key] = 1);
     setCart(cartTemp);
-    console.log(cart);
     let count1 = count;
     count1++;
     setCount(count1);
   }
-
-  // let showCart;
-  // if (count !== 0) {
-  //   showCart = <Cart cart={cart} goods={goodsArr} />;
-  // } else {
-  //   showCart = "Empty";
-  // }
 
   return (
     <>
@@ -44,7 +36,7 @@ function App() {
             />
           ))}
         </div>
-        <CartComponent data={cart}/>
+        <CartComponent data={cart} />
       </div>
     </>
   );
