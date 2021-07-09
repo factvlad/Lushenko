@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React from "react";
 import goodsArr from "./goods.json";
 import Goods from "./Goods";
 import Cart from "./Cart";
@@ -14,7 +14,7 @@ class App extends React.Component {
   }
 
   addToCart = (event) => {
-    event.preventDefault();
+    
     if (!event.target.classList.contains("add-to-cart")) return false;
     let cartTemp = this.state.cart;
     cartTemp[event.target.dataset.key]
@@ -25,6 +25,7 @@ class App extends React.Component {
     let count = this.state.count;
     count++;
     this.setState({ count: count });
+    event.preventDefault();
   };
 
   render() {
