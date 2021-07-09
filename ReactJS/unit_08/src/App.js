@@ -15,18 +15,27 @@ function App() {
   const p1 = cE("p", {}, "world");
   const p2 = cE("p", {}, "world");
   const div = cE("div", { className: "text-grey" }, p1, p2);
-  //task 7
-  const [s1, setS1] = useState([]);
-  const myRef = React.createRef();
 
-  function myFunction() {
-    let inpValue = myRef.current.value;
-    let arr = [...s1];
-    if (inpValue > "") {
-      arr.push(inpValue);
-    }
-    setS1(arr);
-  }
+  //task 7
+
+  let [s1, setS1] = useState([]);
+  let newRef = React.createRef();
+
+  const t7Input = React.createElement("input", {
+    ref: { newRef }, value : "123"
+  });
+console.log(newRef);
+
+
+
+  // function myFunction() {
+  //   let inpValue = newRef.current.value;
+  //   let arr = [...s1];
+  //   if (inpValue > "") {
+  //     arr.push(inpValue);
+  //   }
+  //   setS1(arr.map((item, index) => <li key={index.toString()}>{item}</li>));
+  // }
 
   return (
     <>
@@ -35,14 +44,10 @@ function App() {
       {p}
       {input}
       {div}
+      {t7Input}
 
-      <input ref={myRef}></input>
-      <button onClick={myFunction}>GO</button>
-      <ul>
-        {s1.map((item, index) => (
-          <li key={index.toString()}>{item}</li>
-        ))}
-      </ul>
+      <button /* onClick={myFunction} */>GO</button>
+      <ul>{s1}</ul>
     </>
   );
 }
