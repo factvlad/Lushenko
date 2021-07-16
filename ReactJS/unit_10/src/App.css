@@ -1,24 +1,22 @@
 #root {
-  margin: 40px auto;
-  max-width: 1000px;
-  background: #c0c0c0;
-  padding: 10px;
-}
-
-.test, .task-2, .block-7 {
-  width: 100px;
-  height: 100px;
-  background: orange;
+  max-width: 1200px;
+  padding: 40px;
+  margin: 0 auto;
+  background: #f1f1f1;
 }
 
 .active {
   border: 3px solid red;
 }
 
-h1, h2 {
-  text-transform: uppercase;
+.italic {
+  font-style: italic;
 }
 
-p {
-  text-transform: capitalize;
+.text-orange {
+  color: orange;
+}
+
+.text-grey {
+  color: #c0c0c0;
 }

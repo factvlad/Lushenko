@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+//import CommentsListHook from './CommentsListHook';
+import Comments2ListHook from './Comments2ListHook';
 
-export default function CommentHook() {
+export default function Comment2Hook() {
   const [state, setState] = useState([]);
 
   function selectHandler(e) {
@@ -8,11 +10,13 @@ export default function CommentHook() {
       .then(response => response.json())
       .then(responseData => {
         setState(responseData);
+        //console.log(responseData);
       });
   };
 
   return (
     <>
+      <h2>Choose post ID:</h2>
       <select onChange={selectHandler}>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -20,10 +24,8 @@ export default function CommentHook() {
         <option value="4">4</option>
       </select>
       <div>
-        <h1>Comments</h1>
-        {state.map(function (item, index) {
-          return <div key={item.id}><p><b>{index + 1}. {item.email}</b></p> <p>{item.body}</p></div>
-        })}
+        {/* <CommentsListHook data={state} /> */}
+        <Comments2ListHook data={state} />
       </div>
     </>
   );

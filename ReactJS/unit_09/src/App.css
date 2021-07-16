@@ -19,6 +19,17 @@ h1, h2 {
   text-transform: uppercase;
 }
 
+select {
+  background: brown;
+  color: aliceblue;
+}
 p {
   text-transform: capitalize;
+  color: blueviolet;
+}
+.p2 {
+  font-size: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  color: rgb(231, 53, 186);
 }
