@@ -1,9 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { add, minus, multi, division } from "./app/taskReducerSlice";
+import { add, minus, multi, division,text } from "./app/taskReducerSlice";
 
 export default function In() {
   let task1Input = React.createRef();
+  let task2Input = React.createRef();
   const dispatch = useDispatch();
 
   const addHandler = () => {
@@ -20,6 +21,10 @@ export default function In() {
   const divisionHandler = () => {
     dispatch(division(task1Input.current.value));
   };
+
+  const textHandler = () => {
+    dispatch(text(task2Input.current.value));
+  };
   return (
     <div>
       <input type="number" ref={task1Input} />
@@ -28,6 +33,9 @@ export default function In() {
       <button onClick={minusHandler}>-</button>
       <button onClick={multiHandler}>*</button>
       <button onClick={divisionHandler}>/</button>
+      <h2>Task 2</h2>
+      <input type="text" ref={task2Input} />
+      <button onClick={textHandler}>TEXT</button>
     </div>
   );
 }

@@ -8,22 +8,24 @@ export const taskReducerSlice = createSlice({
   },
   reducers: {
     add: (state, data) => {
-      state.value += +data.payload
+      state.value += +data.payload;
     },
     minus: (state, data) => {
-      state.value -= +data.payload
+      state.value -= +data.payload;
     },
     multi: (state, data) => {
-      state.value *= +data.payload
+      state.value *= +data.payload;
     },
     division: (state, data) => {
-      state.value /= +data.payload
+      state.value /= data.payload;
+    },
+    text: (state, data) => {
+      state.text = data.payload;
     },
   },
 });
 
-export const { add, minus, multi, division, showConsole } =
-  taskReducerSlice.actions;
+export const { add, minus, multi, division, text } = taskReducerSlice.actions;
 
 export const selectValue = (state) => state.taskReducer.value;
 export const selectTest = (state) => state.taskReducer.text;
