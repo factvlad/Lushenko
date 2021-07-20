@@ -4,7 +4,9 @@ npx create-react-app unit_
 npm i start react-router-dom
 
 
-redux, react-redux, @reduxjs/toolkit.
+npm i redux
+npm i react-redux 
+npm i @reduxjs/toolkit
 
 
 npm  start
