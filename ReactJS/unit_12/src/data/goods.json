@@ -1,0 +1,27 @@
+[
+    {
+      "articul": "284s",
+      "title": "Apple",
+      "cost": 70,
+      "image": "https://cdn0.iconfinder.com/data/icons/fruity-3/512/Apple-64.png"
+    },
+    {
+      "articul": "2s8d",
+      "title": "Lemon",
+      "cost": 40,
+      "image": "https://cdn0.iconfinder.com/data/icons/fruity-3/512/Lemon-64.png"
+    },
+    {
+      "articul": "2f4j",
+      "title": "Orange",
+      "cost": 55,
+      "image": "https://cdn0.iconfinder.com/data/icons/fruity-3/512/Orange-64.png"
+    },
+    {
+      "articul": "3d7v",
+      "title": "Mango",
+      "cost": 135,
+      "image": "https://cdn0.iconfinder.com/data/icons/fruity-3/512/Mango-64.png"
+    }
+  ]
+  

@@ -1,0 +1,23 @@
+function Cart(props) {
+  return (
+    <>
+      <div className="cart-field">
+        <tr>
+          <th>Art</th>
+          <th>Count</th>
+          <th>Cost</th>
+        </tr>
+        <div className="goods-block">
+          <img src={props.image} alt="" />
+          <p>{props.title}</p>
+          <p>{props.cost}</p>
+          <button className="add-to-cart" data-key={props.articul}>
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Cart;
