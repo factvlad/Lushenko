@@ -29,37 +29,13 @@ function CartList() {
 
   return (
     <>
-      {/* <tbody>
-        {Object.keys(cart).map((item) => (
-          <tr>
-            <th>{goodsObj[item]["title"]}</th>
-            <th>
-              <img
-                src={goodsObj[item]["image"]}
-                alt="item"
-                className="img"
-                width="30px"
-              />
-            </th>
-            <th>{goodsObj[item]["cost"]}</th>
-            <th>{cart[item]}</th>
-            <th>{goodsObj[item]["cost"] * cart[item]}</th>
-          </tr>
-        ))}
-      </tbody>
+      <div className="goods-field" onClick={clickHandler}>
+     
 
-      <button className="minus-cart" data-key={articul} onClick={clickHandler}>
-        Minus
-      </button>
-      <button className="delete-cart" data-key={articul} onClick={clickHandler}>
-        Delete
-      </button>
-      <tr className="container2">
-        <th className="total">Total:{total}</th>
-      </tr> */}
-      <div className='goods-field' onClick={clickHandler}>
         <Cart data={goodsObj} cart={cart} goods={goods} />
+    
       </div>
+    
     </>
   );
 }

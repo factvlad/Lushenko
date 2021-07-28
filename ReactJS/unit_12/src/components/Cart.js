@@ -14,32 +14,28 @@ function Cart(props) {
   return (
     <>
       <tr>
-          <th>Item</th>
-          <th>Image</th>
-          <th>Price</th>
-          <th>Count</th>
-          <th>Cost</th>
-        </tr>
+        <th>Item</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Count</th>
+        <th>Cost</th>
+      </tr>{" "}
       <tr>
         <div className="goods-field">
-
           {Object.keys(cart).map((item) => (
             <div key={item + goodsObj[item]["title"]}>
-                      <br/>
-              <img src={goodsObj[item]["image"]} alt="img" width="30px" />
+              <br />
+              <img src={goodsObj[item]["image"]} className="img" alt="img" width="30px" />
               <th>
-                {" "}
                 <div className="name">{goodsObj[item]["title"]}</div>
               </th>
               <th>
-                {" "}
                 <div>{goodsObj[item]["cost"]}</div>
               </th>
               <th>
                 <div>{cart[item]}</div>
               </th>
               <th>
-                {" "}
                 <div>{goodsObj[item]["cost"] * cart[item]}$</div>
               </th>
               <button className="minus" data-key={goodsObj[item]["articul"]}>

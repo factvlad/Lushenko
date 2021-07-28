@@ -1,50 +1,67 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { selectCart } from "../store/cartSlice";
-import Cart from "../components/Cart";
+import { useDispatch, useSelector } from "react-redux";
 import { selectGoods } from "../store/goodsSlice";
+import { selectCart } from "../store/cartSlice";
+import { minus, del } from "../store/cartSlice";
+import Cart from '../components/Cart'
 
 function CartList(props) {
   const goods = useSelector(selectGoods);
   const cart = useSelector(selectCart);
+  const articul = props["articul"];
+  const dispatch = useDispatch();
+
   const goodsObj = goods.reduce((accum, item) => {
     accum[item["articul"]] = item;
     return accum;
   }, {});
 
+  let clickHandler = (event) => {
+    event.preventDefault();
+    let t = event.target;
+    if (t.classList.contains("minus-cart")) {
+      dispatch(minus(event.target.dataset["key"]));
+    }
+    if (t.classList.contains("delete-cart")) {
+      dispatch(del(event.target.dataset["key"]));
+    }
+  };
 
-  let totalSum = 0;
+  let total = 0;
   Object.keys(cart).forEach(
-    (item) => (totalSum += goodsObj[item]["cost"] * cart[item])
+    (item) => (total += goodsObj[item]["cost"] * cart[item])
   );
-
   return (
     <>
-      <table>
-        <tbody>
+      <tbody>
+    
+        {Object.keys(cart).map((item) => (
           <tr>
-            <td>Title</td>
-            <td>Image</td>
-            <td>Cost</td>
-            <td>Count</td>
-            <td>Sum</td>
+            <th>{goodsObj[item]["title"]}</th>
+            <th>
+              <img
+                src={goodsObj[item]["image"]}
+                alt="item"
+                className="img"
+                width="30px"
+              />
+            </th>
+            <th>{goodsObj[item]["cost"]}</th>
+            <th>{cart[item]}</th>
+            <th>{goodsObj[item]["cost"] * cart[item]}</th>
           </tr>
-          
-          {Object.keys(cart).map((item) => (
-            <Cart key={item} articul={item} />
-          ))}
-        </tbody>
-      </table>
-      Total: ${totalSum}
+        ))}
+      </tbody>
 
-      <div className="goods-block">
-      <img src={props.image} alt="" />
-      <p>{props.title}</p>
-      <p>{props.cost}</p>
-      <button className="add-to-cart" data-key={props.articul}>
-        Add to cart
+      <button className="minus-cart" data-key={articul} onClick={clickHandler}>
+        Minus
       </button>
-    </div>
+      <button className="delete-cart" data-key={articul} onClick={clickHandler}>
+        Delete
+      </button>
+      <tr className="container2">
+        <th className="total">Total:{total}</th>
+      </tr>
     </>
   );
 }
