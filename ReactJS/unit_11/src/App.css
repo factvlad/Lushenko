@@ -1,8 +1,9 @@
 #root {
-  max-width: 1200px;
-  padding: 40px;
-  margin: 0 auto;
-  background: #f1f1f1;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .italic {
@@ -10,9 +11,9 @@
 }
 
 .text-orange {
-	color: orange;
+  color: orange;
 }
 
 .text-grey {
-	color: #c0c0c0;
+  color: #c0c0c0;
 }

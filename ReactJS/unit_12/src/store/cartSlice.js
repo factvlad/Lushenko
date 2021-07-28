@@ -20,13 +20,9 @@ export const cartSlice = createSlice({
         delete state.value[articul];
       }
     },
-    del: (state, data) => {
-      let articul = data.payload;
-      delete state.value[articul];
-    },
   },
 });
 
-export const { increment, minus, del } = cartSlice.actions;
+export const { increment, minus } = cartSlice.actions;
 export const selectCart = (state) => state.cart.value;
 export default cartSlice.reducer;
