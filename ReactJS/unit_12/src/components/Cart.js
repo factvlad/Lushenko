@@ -1,62 +1,61 @@
-import React from 'react';
-import './Cart.css';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectGoods } from "../store/goodsSlice";
+import { selectCart } from "../store/cartSlice";
 
-const Cart = ({cart , goodsObj}) => {
+function Cart(props) {
+  let cart = props.cart;
+  let goodsObj = props.data;
 
-  let totalSum = 0;
-  Object.keys(cart).forEach(item => totalSum += goodsObj[item]['cost'] * cart[item]);
-
-  const renderRow = (item, index) => {
-    
-    return (
-      <tr key={index}>
-        <td>{index + 1}</td>
-        <td>{goodsObj[item]['title']}</td>
-        <td>${goodsObj[item]['cost']}</td>
-        <td>{cart[item]}</td>
-        <td>${goodsObj[item]['cost'] * cart[item]}</td>
-        <td>
-          <img src={goodsObj[item]['image']} alt="изображение" className="cart-image"/> {/* ОШИБКА!!! */}
-        </td>
-        <td>
-          <button
-            className="btn btn-outline-danger btn-sm float-right">
-            <i className="fa fa-trash-o" />
-          </button>
-          <button
-            className="btn btn-outline-warning btn-sm float-right minus" data-key={item}>
-            <i style={{pointerEvents: 'none'}} className="fa fa-minus-circle" />
-          </button>
-        </td>
-      </tr>
-    );
-  };
-
+  let sum = 0;
+  Object.keys(cart).forEach(
+    (item) => (sum += goodsObj[item]["cost"] * cart[item])
+  );
   return (
-    <div className="shopping-cart-table">
-      <h2>Your Order</h2>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Item</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Sum</th>
-            <th>Image</th>
-          </tr>
-        </thead>
+    <>
+      <tr>
+          <th>Item</th>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Count</th>
+          <th>Cost</th>
+        </tr>
+      <tr>
+        <div className="goods-field">
 
-        <tbody>
-        {Object.keys(cart).map(renderRow)}
-        </tbody>
-      </table>
-      <div className="total">
-        Total: ${totalSum}
-      </div>
-  </div>
+          {Object.keys(cart).map((item) => (
+            <div key={item + goodsObj[item]["title"]}>
+                      <br/>
+              <img src={goodsObj[item]["image"]} alt="img" width="30px" />
+              <th>
+                {" "}
+                <div className="name">{goodsObj[item]["title"]}</div>
+              </th>
+              <th>
+                {" "}
+                <div>{goodsObj[item]["cost"]}</div>
+              </th>
+              <th>
+                <div>{cart[item]}</div>
+              </th>
+              <th>
+                {" "}
+                <div>{goodsObj[item]["cost"] * cart[item]}$</div>
+              </th>
+              <button className="minus" data-key={goodsObj[item]["articul"]}>
+                Minus
+              </button>
+              <button className="delete" data-key={goodsObj[item]["articul"]}>
+                Delete
+              </button>
+            </div>
+          ))}
+          <tr className="container2">
+            <div className="total">Total: ${sum}</div>
+          </tr>
+        </div>
+      </tr>
+    </>
   );
 }
-
-
-export default Cart; 
+export default Cart;

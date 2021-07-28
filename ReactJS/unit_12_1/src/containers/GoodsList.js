@@ -1,9 +1,8 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { selectGoods } from "../store/goodsSlice";
-
 import Goods from "../components/Goods";
 import { increment } from "../store/cartSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectGoods } from "../store/goodsSlice";
 
 function GoodsList() {
   const goods = useSelector(selectGoods);
@@ -29,6 +28,7 @@ function GoodsList() {
           />
         ))}
       </div>
+      
     </>
   );
 }

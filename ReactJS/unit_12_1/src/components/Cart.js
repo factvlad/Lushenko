@@ -42,7 +42,6 @@ function Cart(props) {
   //   dispatch(del(event.target.dataset["key"]));
   // };
 
-
   return (
     <>
       <tr>

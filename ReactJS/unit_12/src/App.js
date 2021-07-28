@@ -2,12 +2,16 @@ import './App.css';
 import GoodsList from './containers/GoodsList';
 import CartList from './containers/CartList';
 
+
 function App() {
   return (
-    <div>
-      <GoodsList/>
-      <CartList/>
-    </div>
+    <>
+      <div>
+        {/* {Вывод даных из хранилища}  первый компонент выводит товары, второй корзину*/  }  
+        <GoodsList /> 
+        <CartList />    
+      </div>
+    </>
   );
 }
 
