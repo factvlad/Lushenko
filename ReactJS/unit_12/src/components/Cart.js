@@ -1,47 +1,62 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { selectGoods } from "../store/goodsSlice";
-import "../App.css";
-import { selectCart } from "../store/cartSlice";
-import { minus } from "../store/cartSlice";
+import React from 'react';
+import './Cart.css';
 
-function Cart(props) {
-  const goods = useSelector(selectGoods);
-  const cart = useSelector(selectCart);
-  const articul = props["articul"];
+const Cart = ({cart , goodsObj}) => {
 
-  const dispatch = useDispatch();
+  let totalSum = 0;
+  Object.keys(cart).forEach(item => totalSum += goodsObj[item]['cost'] * cart[item]);
 
-  const goodsObj = goods.reduce((accum, item) => {
-    accum[item["articul"]] = item;
-    return accum;
-  }, {});
-
-  const minusFunc = (event) => {
-    event.preventDefault();
-    let t = event.target;
-    if (!t.classList.contains("minus-cart")) return true;
-    dispatch(minus(event.target.dataset["key"]));
+  const renderRow = (item, index) => {
+    
+    return (
+      <tr key={index}>
+        <td>{index + 1}</td>
+        <td>{goodsObj[item]['title']}</td>
+        <td>${goodsObj[item]['cost']}</td>
+        <td>{cart[item]}</td>
+        <td>${goodsObj[item]['cost'] * cart[item]}</td>
+        <td>
+          <img src={goodsObj[item]['image']} alt="изображение" className="cart-image"/> {/* ОШИБКА!!! */}
+        </td>
+        <td>
+          <button
+            className="btn btn-outline-danger btn-sm float-right">
+            <i className="fa fa-trash-o" />
+          </button>
+          <button
+            className="btn btn-outline-warning btn-sm float-right minus" data-key={item}>
+            <i style={{pointerEvents: 'none'}} className="fa fa-minus-circle" />
+          </button>
+        </td>
+      </tr>
+    );
   };
 
-  const deleteFunc = () => {};
-
   return (
-    <tr>
-      <td>{goodsObj[articul]["title"]}</td>
-      <td>
-        <img src={goodsObj[articul]["image"]} />
-      </td>
-      <td>{goodsObj[articul]["cost"]}</td>
-      <td>{cart[articul]}</td>
-      <td>{cart[articul] * goodsObj[articul]["cost"]}</td>
-      <td>
-        <button className="minus-cart" data-key={articul} onClick={minusFunc}>
-          -
-        </button>
-      </td>
-    </tr>
+    <div className="shopping-cart-table">
+      <h2>Your Order</h2>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sum</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {Object.keys(cart).map(renderRow)}
+        </tbody>
+      </table>
+      <div className="total">
+        Total: ${totalSum}
+      </div>
+  </div>
   );
 }
 
-export default Cart;
+
+export default Cart; 

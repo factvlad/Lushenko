@@ -18,8 +18,8 @@ function Cart(props) {
   let clickHandler = (event) => {
     event.preventDefault();
     let t = event.target;
-  //  if (!t.classList.contains("add-to-cart")) return true;
-  //   dispatch(increment(t.getAttribute("data-key")));
+    //  if (!t.classList.contains("add-to-cart")) return true;
+    //   dispatch(increment(t.getAttribute("data-key")));
     if (t.classList.contains("minus-cart")) {
       dispatch(minus(event.target.dataset["key"]));
     }
@@ -41,6 +41,7 @@ function Cart(props) {
   //   if (!t.classList.contains("delete-cart")) return true;
   //   dispatch(del(event.target.dataset["key"]));
   // };
+
 
   return (
     <>

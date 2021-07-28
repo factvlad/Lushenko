@@ -8,6 +8,7 @@ function Goods(props) {
         Add to cart
       </button>
     </div>
+
   );
 }
 

@@ -1,29 +1,37 @@
-import React from "react";
-import Cart from "../components/Cart";
-import { useSelector } from "react-redux";
-import { selectCart } from "../store/cartSlice";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectGoods } from '../store/goodsSlice';
+import { selectCart } from '../store/cartSlice';
+import Cart from '../components/Cart';
+import { minus } from '../store/cartSlice';
+
+
 
 function CartList() {
-  const cart = useSelector(selectCart);
-  return (
-    <>
-      {/* cюда перенес таблицу. Ведь заголовок один раз должен добавляться */}
-      <table>
-        <tbody>
-          <tr>
-            <td className="tdtable">Фрукты</td>
-            <td className="tdtable">Изображение</td>
-            <td className="tdtable">Цена</td>
-            <td className="tdtable">Количество</td>
-            <td className="tdtable">Общая стоимость</td>
-          </tr>
-          {Object.keys(cart).map((item) => (
-            <Cart key={item} articul={item} />
-          ))}
-        </tbody>
-      </table>
-    </>
-  );
+    const goods = useSelector(selectGoods);
+    const cart = useSelector(selectCart);
+    // переиндексация массива товара
+    const goodsObj = goods.reduce((accum, item) => {
+        accum[item['articul']] = item;
+        return accum;
+    }, {});
+    console.log(goodsObj);
+
+    const dispatch = useDispatch();
+
+    let clickHandler = (event) => {
+        event.preventDefault();
+        let t = event.target;
+        if (!t.classList.contains('btn-outline-warning'))  return true;
+        dispatch(minus(t.getAttribute('data-key')));
+    }
+
+    return (
+        <div onClick={clickHandler}>
+                <Cart cart={cart} goodsObj={goodsObj}/>
+               {/*  {Object.keys(cart).map(item => <li key={item + goodsObj[item]['title']}>{goodsObj[item]['title']} - {cart[item]}</li>)} */}
+        </div>
+    )
 }
 
 export default CartList;
