@@ -41,22 +41,46 @@ function App() {
       });
   }
 
+  // function task3(event) {
+  //   event.preventDefault();
+  //   let fname = event.target[0].value;
+  //   let fdata = event.target[1].value;
+  //   console.log(fname, fdata);
+  //   fetch("http://test1.ua/api.php", {
+  //     method: "POST",
+  //     header: {
+  //       "Content-Type": "application/x-www-form-urlencoded",
+  //     },
+  //     body: JSON.stringify({ action: 3, filename: fname, filedata: fdata }),
+  //   })
+  //     .then((response) => response.text(""))
+  //     .then((response) => {
+  //       if (response > 0) {
+  //         setT3(<a href={`http://test1.ua//files/${fname}`}>Скачать</a>);
+  //       } else {
+  //         setT3(false);
+  //       }
+  //     });
+  // }
+
   function task3(event) {
     event.preventDefault();
-    let fname = event.target[0].value;
-    let fdata = event.target[1].value;
-    console.log(fname, fdata);
     fetch("http://test1.ua/api.php", {
       method: "POST",
-      header: {
+      headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: JSON.stringify({ action: 3, filename: fname, filedata: fdata }),
+      body: JSON.stringify({
+        action: 3,
+        filename: event.target.filename.value,
+        filedata: event.target.filedata.value,
+      }),
     })
-      .then((response) => response.text(""))
+      .then((response) => response.text())
       .then((response) => {
+        console.log(response);
         if (response > 0) {
-          setT3(<a href={`http://test1.ua//files/${fname}`}>Скачать</a>);
+          setT3(event.target.filename.value);
         } else {
           setT3(false);
         }
@@ -128,14 +152,14 @@ function App() {
         <h2>Создание файла</h2>
         <form action="" onSubmit={task3}>
           <div>
-            <input type="text" />
+            <input type="text" name="filename" />
           </div>
           <div>
-            <input type="text" />
+            <input type="text" name="filedata" />
           </div>
           <button type="sumbit">Go</button>
         </form>
-        <p>{t3}</p>
+        <p>{t3 ? <a href={"http://test1.ua/files/" + t3}>Скачать</a> : ""}</p>
       </div>
       <hr />
       <div>
