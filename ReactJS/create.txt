@@ -1,4 +1,4 @@
-npx create-react-app unit_
+npx create-react-app react_project
 
 
 npm i start react-router-dom

@@ -1,32 +1,42 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectGoods } from "../store/goodsSlice";
-
-import { selectCart } from "../store/cartSlice";
+import { selectCart, minus, deleteGoods } from "../store/cartSlice";
+import Cart from "../components/Cart";
 
 function CartList() {
   const goods = useSelector(selectGoods);
   const cart = useSelector(selectCart);
-  // переиндексирую массив товара
+  const dispatch = useDispatch();
+
   const goodsObj = goods.reduce((accum, item) => {
     accum[item["articul"]] = item;
     return accum;
   }, {});
-  // console.log(goodsObj);
+
+  let clickHandler = (event) => {
+    event.preventDefault();
+    let t = event.target;
+    if (t.classList.contains("minus")) {
+      dispatch(minus(t.getAttribute("data-key")));
+    }
+    if (t.classList.contains("delete")) {
+      dispatch(deleteGoods(t.getAttribute("data-key")));
+    } else {
+      return true;
+    }
+  };
 
   return (
-    <div>
-         <>
-        <div className="cart-field">
-          <h1>Корзина</h1>
-          <table>
-            <tbody>
-              
-            </tbody>
-          </table>
-        </div>
-      </>
-    </div>
+    <>
+      <div className="goods-field" onClick={clickHandler}>
+     
+
+        <Cart data={goodsObj} cart={cart} goods={goods} />
+    
+      </div>
+    
+    </>
   );
 }
 
