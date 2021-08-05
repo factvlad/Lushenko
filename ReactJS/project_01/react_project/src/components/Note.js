@@ -68,9 +68,9 @@ function Note() {
           </div>
         
         <br />
-        <div className={errorClass}>
+        {/* <div className={errorClass}>
           <p>Произошла ошибка. Такой note не найден!!</p>
-        </div>
+        </div> */}
         </div>
   </div>
       <div className="form-row card-body text-center ">
