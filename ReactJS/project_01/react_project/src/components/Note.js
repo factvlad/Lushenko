@@ -5,7 +5,7 @@ import env from "../env.json";
 function Note() {
   let { noteURL } = useParams();
   const [noteText, setNoteText] = useState("");
-  const [lineClass, setLineClass] = useState("hide");
+  const [lineClass, setLineClass] = useState("");
   const [formClass, setFormClass] = useState("hide");
   const [errorClass, setErrorClass] = useState("hide");
 
@@ -29,7 +29,7 @@ function Note() {
           } else if (!response.result) {
             setLineClass("hide");
             setFormClass("hide");
-            setErrorClass("hide");
+            setErrorClass("");
           }
         });
     } else {
@@ -68,13 +68,13 @@ function Note() {
           </div>
         
         <br />
-        {/* <div className={errorClass}>
+        <div className={errorClass}>
           <p>Произошла ошибка. Такой note не найден!!</p>
-        </div> */}
+        </div>
         </div>
   </div>
       <div className="form-row card-body text-center ">
-        <div className={formClass}>
+        <div classNameName={formClass}>
           <form action="" onSubmit={getNote}>
             <input
               type="text"
