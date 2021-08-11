@@ -40,14 +40,16 @@ function Create() {
   return (
     <div>
       <form onSubmit={loadDataFromForm} className={formClass}>
-        <div class="form-row card-body text-center ">
-          <textarea 
+        <div className="form-row card-body text-center ">
+          <input
+           type="text"
+           name="url"
             name="note"
             id="note"
             placeholder="Введите текст заметки"
-            class="form-control  text-center"
-          ></textarea>
-          <button type="submit" class="w-1 btn btn-lg btn-primary  center">
+            className="form-control  text-center"
+          />
+          <button type="submit" className="w-1 btn btn-lg btn-primary  center">
             Создать Note
           </button>
         </div>
@@ -59,21 +61,18 @@ function Create() {
           </a>
         </div>
         <div className="w-70 card-body text-center">
-          {/* <button
-            class="w-100 btn btn-lg btn btn-outline-warning "
+          <button
+            className="w-100 btn btn-lg btn btn-outline-warning "
             onClick={function () {
               setFormClass("");
               setLineClass("hide");
             }}
           >
             Cоздать новую заметку
-          </button> */}
+          </button>
         </div>
       </div>
-
-      
     </div>
-    
   );
 }
 

@@ -56,37 +56,42 @@ function Note() {
   }
   return (
     <div>
-  <div className="form-row card-body text-center ">
+  
+      <form action="" onSubmit={getNote}>
+        <div className="form-row card-body text-center ">
+          <div className={formClass}>
+            <input
+              type="text"
+              name="url"
+              id="url"
+              className="form-control text-center "
+              placeholder="Введите хэш заметки"
+            />
+
+            <button
+              type="submit"
+              className="w-1 btn btn-lg btn-primary btn-success center"
+            >
+              Искать Note
+            </button>
+          </div>
+        </div>
+      </form>
+      <div className="form-row card-body text-center ">
         <div className={lineClass}>
           <h3>Заметка:</h3>
           <div className="display-6">{noteText}</div>
           <br />
           <div>
-            <button onClick={searchNote} className="btn btn-primary">
+            <button onClick={searchNote} className="btn  btn-danger">
               Удалить
             </button>
           </div>
-        
-        <br />
-        {/* <div className={errorClass}>
-          <p>Произошла ошибка. Такой note не найден!!</p>
-        </div> */}
+
+          <br />
         </div>
-  </div>
-      <div className="form-row card-body text-center ">
-        <div classNameName={formClass}>
-          <form action="" onSubmit={getNote}>
-            <input
-              type="text"
-              name="url"
-              id="url"
-              className="form-control text-center"
-              placeholder="Введите хэш заметки"
-            />
-            <button type="submit" className="btn btn-primary">
-              Искать Note
-            </button>
-          </form>
+        <div className={errorClass}>
+          <p>Произошла ошибка. Такой note не найден!!</p>
         </div>
       </div>
     </div>
