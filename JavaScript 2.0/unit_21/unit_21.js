@@ -1,4 +1,4 @@
-// Task 1 ============================================ 
+// Task 1 ============================================
 /* Создайте блок div-1. Добавьте на него событие touchstart. Выведите в out-1 слово  touch если событие сработает. */
 
 function t1() {
@@ -167,14 +167,11 @@ let reset = document.createElement("button");
 reset.classList.add("button-primary", "reset");
 reset.innerHTML = "Reset";
 document.querySelector(".next").after(reset);
-// Создаем кнопку reset 
-
+// Создаем кнопку reset
 
 const images = document.querySelectorAll(".img-12-min"); // Получаем NodeList из картинок
-// const next = document.querySelectorAll(".next"); 
+// const next = document.querySelectorAll(".next");
 // const prev = document.querySelectorAll(".prev");
-
-
 
 let count = 0; // переменная, которая указывает на номер активного изображения в images
 
