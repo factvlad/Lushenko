@@ -1,6 +1,6 @@
 // Task 1
 // При нажатии b-1 выполняете функцию f1. Функция должна вывести в out-1 значение сохраненное под ключем two из массива a1. Возвратите это значение.
-// Первая задача дана в качестве примера. 
+// Первая задача дана в качестве примера.
 
 function f1() {
   let a1 = {
@@ -134,9 +134,7 @@ function f7() {
   let out = "";
 
   a7[inp1] == undefined ? (out = 0) : (out = 1);
-  if (inp in a7)
-
-  div.innerHTML = out;
+  if (inp in a7) div.innerHTML = out;
 }
 
 document.querySelector(".b-7").onclick = f7;
@@ -170,21 +168,17 @@ function f8() {
   //     div.innerHTML = 0;
   //   }
 
-   let div = document.querySelector(".out-8");
+  let div = document.querySelector(".out-8");
   let input = document.querySelector(".i-8").value;
 
-    if (input in a8) {
-      div.innerHTML = a8[input];
-    }
-    else  {
-      div.innerHTML = 0;
-    }
+  if (input in a8) {
+    div.innerHTML = a8[input];
+  } else {
+    div.innerHTML = 0;
   }
-
+}
 
 document.querySelector(".b-8").onclick = f8;
-
-
 
 // Task 9
 // Добавьте input .i-9. При нажатии b-9 выполняете функцию f9. Функция должна вывести в out-9 все ключи массива a9, которые содержат значение, равное значению в input.i-9. Вывод через пробел. Если значений - нет - то выводить пустую строку.
@@ -565,3 +559,12 @@ function f20() {
 }
 
 document.querySelector(".b-20").onclick = f20;
+
+// function a() {
+//   for (var i = 0; i < 10; i++) {
+//     console.log(i);
+//   }
+  
+// }
+// console.log(i)
+// a()
